@@ -1,3 +1,4 @@
+#!usr/bin/env python
 from scipy import interpolate
 from pylab import *
 from skimage import color
@@ -19,9 +20,11 @@ def getInteriorPoints(x, y):
 	nailx = []
 	naily = []
 	def ext(a, b, i):
-		a, b=round(a), round(b)
+		a, b=int(round(a)), int(round(b))
 		nailx.extend(arange(a, b, 1).tolist())
 		naily.extend((ones(b-a)*i).tolist())
+	nailx = map(int,x)
+	naily = map(int,y)
 	x, y = np.array(x), np.array(y)
 	xmin, xmax = amin(x), amax(x)
 	xrang = np.arange(xmin, xmax + 1, 1)

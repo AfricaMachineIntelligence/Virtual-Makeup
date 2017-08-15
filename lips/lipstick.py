@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 from scipy.interpolate import interp1d
 from pylab import *
 from skimage import io, color
